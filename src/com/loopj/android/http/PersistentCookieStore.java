@@ -78,7 +78,6 @@ public class PersistentCookieStore implements CookieStore {
         }
     }
 
-    @Override
     public void addCookie(Cookie cookie) {
         String name = cookie.getName();
 
@@ -96,7 +95,6 @@ public class PersistentCookieStore implements CookieStore {
         prefsWriter.commit();
     }
 
-    @Override
     public void clear() {
         // Clear cookies from local store
         cookies.clear();
@@ -110,7 +108,6 @@ public class PersistentCookieStore implements CookieStore {
         prefsWriter.commit();
     }
 
-    @Override
     public boolean clearExpired(Date date) {
         boolean clearedAny = false;
         SharedPreferences.Editor prefsWriter = cookiePrefs.edit();
@@ -139,7 +136,6 @@ public class PersistentCookieStore implements CookieStore {
         return clearedAny;
     }
 
-    @Override
     public List<Cookie> getCookies() {
         return new ArrayList<Cookie>(cookies.values());
     }
